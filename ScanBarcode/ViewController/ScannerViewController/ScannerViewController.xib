@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScannerViewController" customModule="ScanBarcode" customModuleProvider="target">
+            <connections>
+                <outlet property="scannerView" destination="Mh0-4X-Umc" id="O5J-S8-av5"/>
+                <outlet property="textFieldScaner" destination="LPw-uT-muA" id="QO1-sR-HD7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUG-Fz-rgB">
+                    <rect key="frame" x="0.0" y="20" width="375" height="260"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mh0-4X-Umc" customClass="QRScannerView" customModule="ScanBarcode" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Mh0-4X-Umc" secondAttribute="height" multiplier="16:9" id="uP1-RQ-ij1"/>
+                            </constraints>
+                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LPw-uT-muA">
+                            <rect key="frame" x="16" y="217" width="299" height="39"/>
+                            <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="39" id="mtN-eC-vD7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK9-jl-bo0">
+                            <rect key="frame" x="320" y="211.5" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="JK9-jl-bo0" secondAttribute="height" id="5Gw-BF-hbU"/>
+                                <constraint firstAttribute="width" constant="50" id="MJJ-74-lxP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <state key="normal" title="OK"/>
+                            <connections>
+                                <action selector="actionOk:" destination="-1" eventType="touchUpInside" id="fVK-ox-wRH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jM-JJ-09O">
+                            <rect key="frame" x="269" y="217" width="39" height="39"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="7jM-JJ-09O" secondAttribute="height" multiplier="1:1" id="YAN-nB-sJ9"/>
+                            </constraints>
+                            <state key="normal" image="ic_remove"/>
+                            <connections>
+                                <action selector="reloadScaner:" destination="-1" eventType="touchUpInside" id="6gB-ym-3bu"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="7jM-JJ-09O" firstAttribute="height" secondItem="LPw-uT-muA" secondAttribute="height" id="07a-Pl-ubr"/>
+                        <constraint firstAttribute="trailing" secondItem="Mh0-4X-Umc" secondAttribute="trailing" id="4zz-za-Oab"/>
+                        <constraint firstItem="JK9-jl-bo0" firstAttribute="leading" secondItem="7jM-JJ-09O" secondAttribute="trailing" constant="12" id="ASM-f5-dPv"/>
+                        <constraint firstItem="LPw-uT-muA" firstAttribute="top" secondItem="Mh0-4X-Umc" secondAttribute="bottom" constant="6" id="B6c-mb-rEq"/>
+                        <constraint firstItem="JK9-jl-bo0" firstAttribute="centerY" secondItem="LPw-uT-muA" secondAttribute="centerY" id="D4a-n5-umw"/>
+                        <constraint firstItem="7jM-JJ-09O" firstAttribute="centerY" secondItem="LPw-uT-muA" secondAttribute="centerY" id="DPl-SX-6Al"/>
+                        <constraint firstItem="JK9-jl-bo0" firstAttribute="leading" secondItem="LPw-uT-muA" secondAttribute="trailing" constant="5" id="J5A-da-IQk"/>
+                        <constraint firstItem="Mh0-4X-Umc" firstAttribute="leading" secondItem="EUG-Fz-rgB" secondAttribute="leading" id="L20-ah-o3w"/>
+                        <constraint firstItem="Mh0-4X-Umc" firstAttribute="top" secondItem="EUG-Fz-rgB" secondAttribute="top" id="XOG-8o-swf"/>
+                        <constraint firstItem="LPw-uT-muA" firstAttribute="leading" secondItem="EUG-Fz-rgB" secondAttribute="leading" constant="16" id="e3z-Wj-TK7"/>
+                        <constraint firstAttribute="trailing" secondItem="JK9-jl-bo0" secondAttribute="trailing" constant="5" id="egE-Pu-tzQ"/>
+                        <constraint firstAttribute="height" constant="260" id="egS-wz-UIn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EUG-Fz-rgB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aLV-Sn-fK0"/>
+                <constraint firstItem="EUG-Fz-rgB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="j9b-D8-yV3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EUG-Fz-rgB" secondAttribute="trailing" id="pjd-tB-NbE"/>
+                <constraint firstItem="EUG-Fz-rgB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zZd-vs-kMN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="150.67466266866569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_remove" width="24" height="24"/>
+    </resources>
+</document>
